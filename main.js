@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Constants & Endpoints
   const DEADLINE_ISO = '2026-10-10T23:59:59+02:00';
   const DEADLINE_YEAR = 2026;
-  const NOTIFICATION_EMAIL = 'kwemard@gmail.com';
+  const NOTIFICATION_EMAIL = 'marius.kwemou@gmail.com';
   const EMAIL_DISPATCH_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`;
   
   // URL officielle de l'application Web Google Apps Script connectée au Google Sheet
