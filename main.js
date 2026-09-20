@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const EMAIL_DISPATCH_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`;
   
   // URL officielle de l'application Web Google Apps Script
-  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdbOzER8jx2ybxwki-nseO72mT_VsHBIJXZkzMXPaZNIpgFkmDRS792B0sbHstsmWuXw/exec';
+  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxqycqOYulKmrirtzDr7IIhORo1qQ7Fxoq9VQel_5STFucqkIYD38aUfJpxve9sOc5eYw/exec';
 
   /* ==========================================================================
      1. Navigation & Mobile Menu Toggle
