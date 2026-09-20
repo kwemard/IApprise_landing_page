@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const NOTIFICATION_EMAIL = 'marius.kwemou@gmail.com';
   const EMAIL_DISPATCH_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`;
   
-  // URL officielle de l'application Web Google Apps Script connectée au Google Sheet
+  // URL officielle de l'application Web Google Apps Script
   const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdbOzER8jx2ybxwki-nseO72mT_VsHBIJXZkzMXPaZNIpgFkmDRS792B0sbHstsmWuXw/exec';
 
   /* ==========================================================================
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. Form Validation & Submission (Google Sheets + Email + Local Backup)
+     4. Form Validation & Submission (Google Sheets + Email Notification)
      ========================================================================== */
   const applicationForm = document.getElementById('application-form');
   const formStatus = document.getElementById('form-status');
@@ -202,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const formData = new FormData(applicationForm);
+      const urlParams = new URLSearchParams();
       const dataObj = {
         _subject: "Nouvelle candidature reçue — IApprise Cohorte 2026",
         _template: "table"
@@ -209,22 +210,28 @@ document.addEventListener('DOMContentLoaded', () => {
       
       formData.forEach((value, key) => {
         dataObj[key] = value;
+        urlParams.append(key, value);
       });
 
       const promises = [];
 
-      // 1. Envoi direct vers votre feuille Google Sheets
+      // 1. Envoi vers Google Sheets (format urlencoded pour Apps Script)
       if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT.startsWith('http')) {
         promises.push(
           fetch(GOOGLE_SHEETS_ENDPOINT, {
             method: 'POST',
             mode: 'no-cors',
-            body: formData
-          }).catch(() => {})
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: urlParams.toString()
+          }).catch((err) => {
+            console.error('Google Sheets sync error:', err);
+          })
         );
       }
 
-      // 2. Notification E-mail vers kwemard@gmail.com
+      // 2. Notification E-mail vers marius.kwemou@gmail.com
       promises.push(
         fetch(EMAIL_DISPATCH_ENDPOINT, {
           method: 'POST',
@@ -233,10 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'Accept': 'application/json'
           },
           body: JSON.stringify(dataObj)
-        }).catch(() => {})
+        }).catch((err) => {
+          console.error('Email dispatch error:', err);
+        })
       );
 
-      // 3. Sauvegarde locale (backup)
+      // 3. Sauvegarde locale (backup si serveur local actif)
       promises.push(
         fetch('/api/candidature', {
           method: 'POST',
