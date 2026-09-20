@@ -6,11 +6,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // Constants
+  // Constants & Endpoints
   const DEADLINE_ISO = '2026-10-10T23:59:59+02:00';
   const DEADLINE_YEAR = 2026;
   const NOTIFICATION_EMAIL = 'kwemard@gmail.com';
   const EMAIL_DISPATCH_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`;
+  
+  // URL de l'application Web Google Apps Script connectée au Google Sheet
+  const GOOGLE_SHEETS_ENDPOINT = 'GOOGLE_SHEETS_WEBAPP_URL';
 
   /* ==========================================================================
      1. Navigation & Mobile Menu Toggle
@@ -96,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. Form Validation & Submission Handling (Email + Local CSV + Dashboard)
+     4. Form Validation & Submission (Google Sheets + Email + Local Backup)
      ========================================================================== */
   const applicationForm = document.getElementById('application-form');
   const formStatus = document.getElementById('form-status');
@@ -208,31 +211,42 @@ document.addEventListener('DOMContentLoaded', () => {
         dataObj[key] = value;
       });
 
-      try {
-        // 1. Enregistrement local (candidatures.csv + candidatures.json + Dashboard Admin)
-        try {
-          await fetch('/api/candidature', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dataObj)
-          });
-        } catch (_) {
-          // Serveur statique fallback
-        }
+      const promises = [];
 
-        // 2. Notification e-mail vers kwemard@gmail.com
-        try {
-          await fetch(EMAIL_DISPATCH_ENDPOINT, {
+      // 1. Envoi vers Google Sheets (si configuré)
+      if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT !== 'GOOGLE_SHEETS_WEBAPP_URL' && GOOGLE_SHEETS_ENDPOINT.startsWith('http')) {
+        promises.push(
+          fetch(GOOGLE_SHEETS_ENDPOINT, {
             method: 'POST',
-            headers: { 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(dataObj)
-          });
-        } catch (_) {
-          // Envoi asynchrone non-bloquant
-        }
+            mode: 'no-cors',
+            body: formData
+          }).catch(() => {})
+        );
+      }
+
+      // 2. Notification E-mail vers kwemard@gmail.com
+      promises.push(
+        fetch(EMAIL_DISPATCH_ENDPOINT, {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(dataObj)
+        }).catch(() => {})
+      );
+
+      // 3. Sauvegarde locale (si serveur Python local actif)
+      promises.push(
+        fetch('/api/candidature', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dataObj)
+        }).catch(() => {})
+      );
+
+      try {
+        await Promise.all(promises);
 
         if (formStatus) {
           formStatus.className = 'form-status is-success';
