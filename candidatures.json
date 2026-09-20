@@ -1,0 +1,42 @@
+[
+  {
+    "date_soumission": "2026-09-20 12:11:20",
+    "fullname": "Marius Test",
+    "email": "marius@example.com",
+    "phone": "+221770000000",
+    "country": "Sénégal",
+    "city": "Dakar",
+    "school": "UCAD",
+    "domain": "Informatique",
+    "level": "Master",
+    "python_level": "Intermédiaire",
+    "datascience_experience": "Projet personnel",
+    "motivation": "Passionné par la Data Science et le Machine Learning pour résoudre des problématiques locales.",
+    "future_goals": "Ingénieur Machine Learning",
+    "problem_to_solve": "Optimisation agricole par imagerie satellite",
+    "weekly_availability": "5 à 10 heures",
+    "pc_access": "Oui",
+    "internet_access": "Oui",
+    "consent": "on"
+  },
+  {
+    "date_soumission": "2026-09-20 12:17:33",
+    "fullname": "marius Ma",
+    "email": "kwemard@yahoo.fr",
+    "phone": "",
+    "country": "cameroun",
+    "city": "",
+    "school": "UTC",
+    "domain": "",
+    "level": "Licence / Bachelor",
+    "python_level": "Jamais utilisé",
+    "datascience_experience": "Aucune",
+    "motivation": "RAS",
+    "future_goals": "",
+    "problem_to_solve": "",
+    "weekly_availability": "5 à 10 heures",
+    "pc_access": "Oui",
+    "internet_access": "Oui",
+    "consent": "on"
+  }
+]

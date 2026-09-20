@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- Monogram IA -->
+  <g transform="translate(48, 20)">
+    <!-- Letter I (Anthracite / Charcoal Navy #313E4B) -->
+    <!-- Top Horizontal Cap -->
+    <path d="M12 4H30C32.2 4 34 5.8 34 8C34 10.2 32.2 12 30 12H23V26H28C30.2 26 32 27.8 32 30C32 32.2 30.2 34 28 34H23V42C23 44.2 21.2 46 19 46H10C5.58 46 2 42.42 2 38V30C2 25.58 5.58 22 10 22H17V12H12C9.8 12 8 10.2 8 8C8 5.8 9.8 4 12 4Z" fill="#313E4B"/>
+    <path d="M10 28H17V40H10C7.8 40 6 38.2 6 36V32C6 29.8 7.8 28 10 28Z" fill="#313E4B"/>
+
+    <!-- Letter A (Electric Blue #0066FF / #1877F2) -->
+    <path d="M38 4C39.6 2 42.4 2 44 4L62 46C63 48.2 61.4 51 59 51C57.4 51 56 50 55.4 48.5L50 35H32L26.6 48.5C26 50 24.6 51 23 51C20.6 51 19 48.2 20 46L38 4ZM41 15L35 30H47L41 15Z" fill="#0066FF"/>
+    
+    <!-- Crossbar -->
+    <path d="M30 30H52" stroke="#0066FF" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Circuit Tech Node Circle at bottom of right leg -->
+    <circle cx="59" cy="49" r="8" fill="#0066FF"/>
+    <circle cx="59" cy="49" r="3.2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography: INTELLIGENCE APPRISE -->
+  <text x="100" y="142" text-anchor="middle" font-family="'Space Grotesk', 'Inter', system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="3.5px" fill="#313E4B">
+    INTELLIGENCE
+  </text>
+  <text x="100" y="168" text-anchor="middle" font-family="'Space Grotesk', 'Inter', system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="5.5px" fill="#313E4B">
+    APPRISE
+  </text>
+</svg>

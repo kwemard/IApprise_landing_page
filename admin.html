@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IApprise — Espace Gestion des Candidatures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f4f6f8;
+      color: var(--anthracite);
+    }
+    .admin-header {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-subtle-dark);
+    }
+    .admin-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .admin-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .admin-badge {
+      background-color: var(--blue-primary);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+    .admin-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .admin-main {
+      padding: 2.5rem 0;
+    }
+    .stats-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-subtle-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .stat-card-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-card-label {
+      font-size: 0.875rem;
+      color: var(--anthracite);
+      font-weight: 500;
+    }
+    .panel-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-subtle-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .panel-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background-color: #fafbfc;
+    }
+    .panel-title {
+      font-size: 1.125rem;
+      color: var(--dark-bg);
+      font-weight: 700;
+    }
+    .search-input {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--grey-light);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      min-width: 260px;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .candidates-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .candidates-table th {
+      background-color: #f8fafc;
+      color: var(--dark-bg);
+      font-weight: 600;
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--border-subtle-light);
+      white-space: nowrap;
+    }
+    .candidates-table td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--border-subtle-light);
+      vertical-align: middle;
+    }
+    .candidates-table tr:hover {
+      background-color: #fbfcfe;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: #eef2f6;
+      color: var(--anthracite);
+    }
+    .tag-blue {
+      background-color: rgba(24, 119, 242, 0.1);
+      color: var(--blue-primary);
+    }
+    .btn-details {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8125rem;
+      background-color: var(--dark-bg);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .btn-details:hover {
+      background-color: var(--blue-primary);
+    }
+
+    /* Modal / Drawer */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 1.5rem;
+    }
+    .modal-overlay.is-active {
+      display: flex;
+    }
+    .modal-box {
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-subtle-light);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--anthracite);
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .detail-item {
+      font-size: 0.875rem;
+    }
+    .detail-label {
+      font-weight: 600;
+      color: var(--dark-bg);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .detail-value {
+      color: var(--anthracite);
+    }
+    .detail-full {
+      grid-column: 1 / -1;
+      background-color: #f8fafc;
+      border: 1px solid var(--border-subtle-light);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <div class="container admin-nav">
+      <div class="admin-title-wrap">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.svg" alt="IApprise Logo" height="32">
+        </a>
+        <span class="admin-badge">Espace Admissions</span>
+      </div>
+      <div class="admin-actions">
+        <a href="/api/export-csv" class="btn btn-primary btn-sm" download>
+          ⬇ Télécharger Excel (CSV)
+        </a>
+        <a href="index.html" class="btn btn-secondary btn-sm">
+          Voir le site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+    <div class="stats-overview">
+      <div class="stat-card">
+        <div class="stat-card-num" id="stat-total">0</div>
+        <div class="stat-card-label">Candidatures totales</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" id="stat-places">15</div>
+        <div class="stat-card-label">Places disponibles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" id="stat-deadline">10 oct. 2026</div>
+        <div class="stat-card-label">Date limite de sélection</div>
+      </div>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-title">Liste des candidats inscrits</div>
+        <input type="text" id="candidate-search" class="search-input" placeholder="Rechercher par nom, email, pays, école...">
+      </div>
+
+      <div class="table-responsive">
+        <table class="candidates-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Nom complet</th>
+              <th>E-mail</th>
+              <th>Téléphone</th>
+              <th>Pays</th>
+              <th>Université / École</th>
+              <th>Niveau</th>
+              <th>Python</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="candidates-tbody">
+            <tr>
+              <td colspan="9" style="text-align: center; padding: 2rem; color: #888;">Chargement des données...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Détails Candidat -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-candidate-name" style="font-size: 1.25rem; font-family: var(--font-heading);">Détails du dossier</h3>
+        <button type="button" class="modal-close-btn" id="modal-close">&times;</button>
+      </div>
+      <div class="detail-grid" id="modal-details-content">
+        <!-- Rempli en JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allCandidates = [];
+
+    async function loadCandidates() {
+      try {
+        const res = await fetch('/api/candidates');
+        allCandidates = await res.json();
+        renderCandidates(allCandidates);
+        document.getElementById('stat-total').textContent = allCandidates.length;
+      } catch (e) {
+        document.getElementById('candidates-tbody').innerHTML = `
+          <tr><td colspan="9" style="text-align: center; padding: 2rem; color: #c00;">
+            Erreur de chargement des candidatures.
+          </td></tr>
+        `;
+      }
+    }
+
+    function renderCandidates(list) {
+      const tbody = document.getElementById('candidates-tbody');
+      if (!list || list.length === 0) {
+        tbody.innerHTML = `
+          <tr><td colspan="9" style="text-align: center; padding: 2rem; color: #888;">
+            Aucune candidature enregistrée pour le moment.
+          </td></tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = list.map((c, index) => `
+        <tr>
+          <td><span style="font-size: 0.75rem; color: #666;">${c.date_soumission || '-'}</span></td>
+          <td><strong>${c.fullname || '-'}</strong></td>
+          <td><a href="mailto:${c.email}">${c.email || '-'}</a></td>
+          <td>${c.phone || '-'}</td>
+          <td><span class="tag">${c.country || '-'}</span></td>
+          <td>${c.school || '-'}</td>
+          <td><span class="tag tag-blue">${c.level || '-'}</span></td>
+          <td>${c.python_level || '-'}</td>
+          <td>
+            <button type="button" class="btn-details" onclick="openDetails(${index})">
+              Voir dossier
+            </button>
+          </td>
+        </tr>
+      `).reverse().join('');
+    }
+
+    function openDetails(index) {
+      const c = allCandidates[index];
+      if (!c) return;
+
+      document.getElementById('modal-candidate-name').textContent = c.fullname || 'Candidat';
+      
+      const content = document.getElementById('modal-details-content');
+      content.innerHTML = `
+        <div class="detail-item"><span class="detail-label">E-mail :</span><span class="detail-value">${c.email || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Téléphone / WhatsApp :</span><span class="detail-value">${c.phone || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Pays & Ville :</span><span class="detail-value">${c.country || '-'} (${c.city || '-'})</span></div>
+        <div class="detail-item"><span class="detail-label">Université / École :</span><span class="detail-value">${c.school || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Domaine & Niveau :</span><span class="detail-value">${c.domain || '-'} (${c.level || '-'})</span></div>
+        <div class="detail-item"><span class="detail-label">Niveau Python :</span><span class="detail-value">${c.python_level || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Expérience Data & ML :</span><span class="detail-value">${c.datascience_experience || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Disponibilité :</span><span class="detail-value">${c.weekly_availability || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Accès PC & Connexion :</span><span class="detail-value">PC: ${c.pc_access || '-'} / Internet: ${c.internet_access || '-'}</span></div>
+        <div class="detail-item"><span class="detail-label">Date de candidature :</span><span class="detail-value">${c.date_soumission || '-'}</span></div>
+        
+        <div class="detail-full">
+          <span class="detail-label">Motivations pour intégrer IApprise :</span>
+          <p style="margin-top: 0.35rem; line-height: 1.5;">${c.motivation || 'Non renseigné'}</p>
+        </div>
+
+        <div class="detail-full">
+          <span class="detail-label">Métier ou projet visé :</span>
+          <p style="margin-top: 0.35rem; line-height: 1.5;">${c.future_goals || 'Non renseigné'}</p>
+        </div>
+
+        <div class="detail-full">
+          <span class="detail-label">Défi ou problème à résoudre grâce à l'IA :</span>
+          <p style="margin-top: 0.35rem; line-height: 1.5;">${c.problem_to_solve || 'Non renseigné'}</p>
+        </div>
+      `;
+
+      document.getElementById('detail-modal').classList.add('is-active');
+    }
+
+    document.getElementById('modal-close').addEventListener('click', () => {
+      document.getElementById('detail-modal').classList.remove('is-active');
+    });
+
+    document.getElementById('detail-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'detail-modal') {
+        document.getElementById('detail-modal').classList.remove('is-active');
+      }
+    });
+
+    document.getElementById('candidate-search').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      const filtered = allCandidates.filter(c => {
+        return (c.fullname && c.fullname.toLowerCase().includes(q)) ||
+               (c.email && c.email.toLowerCase().includes(q)) ||
+               (c.country && c.country.toLowerCase().includes(q)) ||
+               (c.school && c.school.toLowerCase().includes(q));
+      });
+      renderCandidates(filtered);
+    });
+
+    loadCandidates();
+  </script>
+</body>
+</html>

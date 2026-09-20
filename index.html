@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IApprise | Formation Data Science &amp; IA pour les talents africains</title>
+  <meta name="description" content="IApprise sélectionne et forme en ligne des talents africains en Data Science, Machine Learning et Intelligence Artificielle. 15 places, formation financée pour les candidats sélectionnés.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IApprise | Formation Data Science &amp; IA pour les talents africains">
+  <meta property="og:description" content="IApprise sélectionne et forme en ligne des talents africains en Data Science, Machine Learning et Intelligence Artificielle. 15 places, formation financée pour les candidats sélectionnés.">
+  <meta property="og:image" content="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Preconnect & Preload Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navigation sticky -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-link" aria-label="IApprise — Accueil">
+        <img src="assets/logo.svg" alt="IApprise Logo" class="brand-logo" width="180" height="38">
+      </a>
+      
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#programme" class="nav-link">Programme</a></li>
+          <li class="nav-item"><a href="#mission" class="nav-link">Notre mission</a></li>
+          <li class="nav-item"><a href="#entreprises" class="nav-link">Pour les entreprises</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="#candidature" class="btn btn-primary btn-sm">
+          <span>Candidater</span>
+          <span class="btn-badge">10 oct. 2026</span>
+        </a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- SECTION 1 — HERO -->
+    <section class="section hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="deadline-pill" data-reveal>
+              <span class="pill-indicator"></span>
+              <span class="pill-text">Candidatures ouvertes jusqu’au <strong>10 octobre 2026</strong></span>
+            </div>
+            
+            <h1 class="hero-title" id="hero-title" data-reveal>
+              Nous formons en Afrique les talents <span class="highlight-blue">Data &amp; IA</span> capables de contribuer aux équipes internationales.
+            </h1>
+            
+            <p class="hero-lead" data-reveal>
+              IApprise identifie, sélectionne et forme des étudiants et jeunes talents africains aux compétences en Data Science, Machine Learning et Intelligence Artificielle recherchées dans les environnements professionnels internationaux.
+            </p>
+
+            <p class="hero-highlight-box" data-reveal>
+              La formation est <strong>100 % en ligne</strong> et <strong>entièrement financée par nos partenaires</strong>. Elle est donc <strong>gratuite pour les 15 candidats sélectionnés</strong>.
+            </p>
+            
+            <div class="hero-cta-group" data-reveal>
+              <a href="#candidature" class="btn btn-primary btn-lg" id="hero-cta-primary">
+                Déposer ma candidature
+              </a>
+              <a href="#programme" class="btn btn-secondary btn-lg" id="hero-cta-secondary">
+                Découvrir le programme
+              </a>
+            </div>
+            
+            <!-- Badges sous les boutons -->
+            <div class="hero-badges-list" data-reveal>
+              <span class="hero-badge-item">15 places</span>
+              <span class="hero-badge-item">100 % en ligne</span>
+              <span class="hero-badge-item">Formation financée</span>
+              <span class="hero-badge-item">Admission sur sélection</span>
+            </div>
+          </div>
+          
+          <!-- Carte premium droite -->
+          <div class="hero-card-col" data-reveal>
+            <div class="hero-premium-card">
+              <div class="card-header-badge">
+                <span class="card-org">IApprise</span>
+                <span class="card-program-title">African Data &amp; AI Talent Program</span>
+              </div>
+
+              <div class="card-stats-grid">
+                <div class="card-stat-box">
+                  <span class="stat-num">15</span>
+                  <span class="stat-text">places</span>
+                </div>
+                <div class="card-stat-box">
+                  <span class="stat-num">10 oct. 2026</span>
+                  <span class="stat-text">fin des candidatures</span>
+                </div>
+                <div class="card-stat-box">
+                  <span class="stat-num">100 %</span>
+                  <span class="stat-text">en ligne</span>
+                </div>
+                <div class="card-stat-box">
+                  <span class="stat-num">0 €</span>
+                  <span class="stat-text">pour les candidats sélectionnés</span>
+                </div>
+              </div>
+
+              <div class="card-modules-preview">
+                <span class="modules-preview-title">Modules clés :</span>
+                <ul class="preview-tags-list">
+                  <li>Python &amp; Data Analysis</li>
+                  <li>Machine Learning</li>
+                  <li>Intelligence Artificielle</li>
+                  <li>Projet portfolio</li>
+                  <li>Préparation aux environnements internationaux</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — POSITIONNEMENT (Notre mission) -->
+    <section class="section section-light" id="mission" aria-labelledby="mission-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Notre Mission</span>
+          <h2 class="section-title" id="mission-title">Plus qu’une formation : un programme de développement de talents.</h2>
+          <p class="section-subtitle">
+            IApprise a pour ambition de réduire l’écart entre le potentiel des talents africains et les exigences des organisations technologiques internationales.
+          </p>
+        </div>
+
+        <div class="pillars-3-grid">
+          <div class="pillar-box" data-reveal>
+            <div class="pillar-step-num">01</div>
+            <h3 class="pillar-step-title">Identifier</h3>
+            <p class="pillar-step-desc">
+              Identifier des étudiants motivés et des profils à fort potentiel sur le continent africain.
+            </p>
+          </div>
+
+          <div class="pillar-box" data-reveal>
+            <div class="pillar-step-num">02</div>
+            <h3 class="pillar-step-title">Former</h3>
+            <p class="pillar-step-desc">
+              Développer des compétences techniques solides à travers un apprentissage pratique et des projets concrets.
+            </p>
+          </div>
+
+          <div class="pillar-box" data-reveal>
+            <div class="pillar-step-num">03</div>
+            <h3 class="pillar-step-title">Préparer</h3>
+            <p class="pillar-step-desc">
+              Préparer les participants aux méthodes de travail, aux outils et aux standards attendus dans les équipes internationales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — POURQUOI IAPPRISE -->
+    <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Excellence &amp; Pratique</span>
+          <h2 class="section-title" id="pourquoi-title">Des compétences techniques aux standards professionnels.</h2>
+          <p class="section-subtitle">
+            Une structure pensée pour allier maîtrise des technologies de pointe et rigueur opérationnelle exigée à l'international.
+          </p>
+        </div>
+
+        <div class="features-6-grid">
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">Python &amp; Data</h3>
+            <p class="feature-desc">
+              Maîtriser les fondamentaux de Python, Pandas, NumPy et l’analyse de données.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">Machine Learning</h3>
+            <p class="feature-desc">
+              Comprendre, entraîner et évaluer des modèles de Machine Learning.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">Intelligence Artificielle</h3>
+            <p class="feature-desc">
+              Découvrir les usages modernes de l’IA, du Deep Learning et de l’IA générative.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">Projets concrets</h3>
+            <p class="feature-desc">
+              Construire des projets pouvant être présentés dans un portfolio professionnel.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">Collaboration</h3>
+            <p class="feature-desc">
+              Apprendre à documenter son travail, utiliser Git/GitHub et collaborer efficacement.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <h3 class="feature-title">International readiness</h3>
+            <p class="feature-desc">
+              Développer les pratiques professionnelles nécessaires pour évoluer dans des équipes internationales et distribuées.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — PROGRAMME -->
+    <section class="section section-dark" id="programme" aria-labelledby="programme-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Curriculum</span>
+          <h2 class="section-title" id="programme-title">Un parcours progressif, de la donnée à l’IA.</h2>
+          <p class="section-subtitle">
+            Six modules conçus pour acquérir les compétences techniques fondamentales et avancées.
+          </p>
+        </div>
+
+        <div class="modules-grid">
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 01</span>
+              <h3 class="module-name">Python pour la Data Science</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Python</li>
+              <li>Structures de données</li>
+              <li>Fonctions</li>
+              <li>NumPy</li>
+              <li>Bonnes pratiques</li>
+            </ul>
+          </div>
+
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 02</span>
+              <h3 class="module-name">Data Analysis &amp; Visualization</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Pandas</li>
+              <li>Nettoyage des données</li>
+              <li>Analyse exploratoire</li>
+              <li>Visualisation</li>
+              <li>Statistiques descriptives</li>
+            </ul>
+          </div>
+
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 03</span>
+              <h3 class="module-name">Machine Learning</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Préparation des données</li>
+              <li>Régression</li>
+              <li>Classification</li>
+              <li>Évaluation</li>
+              <li>Validation des modèles</li>
+            </ul>
+          </div>
+
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 04</span>
+              <h3 class="module-name">Intelligence Artificielle moderne</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Introduction au Deep Learning</li>
+              <li>IA générative</li>
+              <li>LLM</li>
+              <li>Cas d’usage professionnels</li>
+              <li>Utilisation responsable de l’IA</li>
+            </ul>
+          </div>
+
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 05</span>
+              <h3 class="module-name">Projet pratique</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Réalisation d’un projet Data ou IA de bout en bout</li>
+              <li>Documentation technique</li>
+              <li>Présentation de projet</li>
+              <li>GitHub</li>
+              <li>Portfolio professionnel</li>
+            </ul>
+          </div>
+
+          <div class="module-card" data-reveal>
+            <div class="module-header">
+              <span class="module-tag">Module 06</span>
+              <h3 class="module-name">Professional &amp; International Readiness</h3>
+            </div>
+            <ul class="module-topics-list">
+              <li>Git et GitHub</li>
+              <li>Travail en équipe</li>
+              <li>Communication professionnelle</li>
+              <li>Présentation de projet</li>
+              <li>CV &amp; LinkedIn</li>
+              <li>Entretien technique &amp; Collaboration à distance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — FORMATION FINANCÉE -->
+    <section class="section section-financement" id="financement" aria-labelledby="financement-title">
+      <div class="container text-center">
+        <div class="financement-box" data-reveal>
+          <span class="section-kicker">Égalité des Chances</span>
+          <h2 class="section-title" id="financement-title">Le talent ne devrait pas être limité par les moyens financiers.</h2>
+          <p class="financement-main-text">
+            Grâce au financement de nos partenaires, la formation IApprise est entièrement prise en charge pour les candidats sélectionnés.
+          </p>
+
+          <div class="price-highlight-banner">
+            <span class="price-value">0 €</span>
+            <span class="price-desc">de frais de formation pour les candidats sélectionnés</span>
+          </div>
+
+          <p class="financement-subtext">
+            L’admission repose sur la qualité de la candidature, la motivation et la disponibilité du candidat — et non sur sa capacité à financer la formation.
+          </p>
+          <p class="financement-limit-notice">
+            Les places étant limitées à <strong>15 participants</strong>, une sélection est organisée après la clôture des candidatures.
+          </p>
+
+          <div class="financement-cta">
+            <a href="#candidature" class="btn btn-primary btn-lg">
+              Candidater avant le 10 octobre 2026
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — POUR LES ENTREPRISES INTERNATIONALES -->
+    <section class="section section-dark" id="entreprises" aria-labelledby="entreprises-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Pour les entreprises</span>
+          <h2 class="section-title" id="entreprises-title">Développer une nouvelle génération de talents Data &amp; IA depuis l’Afrique.</h2>
+          <p class="section-subtitle">
+            IApprise construit un vivier de talents formés sur le continent africain et préparés aux méthodes, outils et exigences des environnements professionnels internationaux.
+          </p>
+        </div>
+
+        <div class="enterprise-grid">
+          <div class="enterprise-card" data-reveal>
+            <h3 class="enterprise-card-title">Talents sélectionnés</h3>
+            <p class="enterprise-card-desc">
+              Les participants sont admis à l’issue d’un processus de sélection rigoureux fondé sur le potentiel et la motivation.
+            </p>
+          </div>
+
+          <div class="enterprise-card" data-reveal>
+            <h3 class="enterprise-card-title">Formation pratique</h3>
+            <p class="enterprise-card-desc">
+              La pédagogie repose sur des exercices concrets, des projets appliqués et des cas d’usage réalistes.
+            </p>
+          </div>
+
+          <div class="enterprise-card" data-reveal>
+            <h3 class="enterprise-card-title">Évaluation par les projets</h3>
+            <p class="enterprise-card-desc">
+              Les compétences sont démontrées à travers des réalisations tangibles et du code audité.
+            </p>
+          </div>
+
+          <div class="enterprise-card" data-reveal>
+            <h3 class="enterprise-card-title">Préparation internationale</h3>
+            <p class="enterprise-card-desc">
+              Communication, documentation, GitHub, collaboration à distance et standards professionnels font partie intégrante du parcours.
+            </p>
+          </div>
+        </div>
+
+        <div class="enterprise-cta-wrapper text-center" data-reveal>
+          <a href="mailto:CONTACT_EMAIL@iapprise.org?subject=Partenariat%20IApprise" class="btn btn-secondary btn-lg">
+            Devenir partenaire de IApprise
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — PROFIL DES CANDIDATS -->
+    <section class="section section-light" id="profils" aria-labelledby="profils-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Éligibilité</span>
+          <h2 class="section-title" id="profils-title">Qui peut candidater ?</h2>
+          <p class="section-subtitle">
+            IApprise s’adresse principalement aux étudiants et jeunes talents vivant sur le continent africain qui souhaitent construire une carrière dans la Data Science et l’Intelligence Artificielle.
+          </p>
+        </div>
+
+        <div class="profils-container" data-reveal>
+          <div class="criteria-card-full">
+            <h3 class="criteria-card-heading">Critères d'éligibilité :</h3>
+            <ul class="criteria-bullet-list">
+              <li>Étudiant ou jeune diplômé</li>
+              <li>Résident sur le continent africain</li>
+              <li>Intérêt fort pour la Data et l’IA</li>
+              <li>Capacité à suivre une formation en ligne</li>
+              <li>Accès régulier à un ordinateur et à Internet</li>
+              <li>Motivation et disponibilité</li>
+              <li>Envie de travailler sur des projets pratiques</li>
+            </ul>
+
+            <div class="criteria-reassurance-box">
+              <span class="reassurance-icon">ℹ</span>
+              <p>Il n’est pas nécessaire d’être déjà expert en programmation ou en Machine Learning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — PROCESSUS DE SÉLECTION -->
+    <section class="section" id="selection" aria-labelledby="selection-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Cohorte 2026</span>
+          <h2 class="section-title" id="selection-title">Comment rejoindre la prochaine cohorte ?</h2>
+          <p class="section-subtitle">
+            Un processus transparent en 4 étapes pour intégrer le programme.
+          </p>
+        </div>
+
+        <div class="selection-steps-grid" data-reveal>
+          <div class="selection-step-card">
+            <div class="step-badge">01</div>
+            <h3 class="step-card-title">Candidature</h3>
+            <p class="step-card-desc">Remplis le formulaire avant le <strong>10 octobre 2026</strong>.</p>
+          </div>
+
+          <div class="selection-step-card">
+            <div class="step-badge">02</div>
+            <h3 class="step-card-title">Étude du profil</h3>
+            <p class="step-card-desc">Nous évaluons ton parcours, ta motivation et ta disponibilité.</p>
+          </div>
+
+          <div class="selection-step-card">
+            <div class="step-badge">03</div>
+            <h3 class="step-card-title">Sélection</h3>
+            <p class="step-card-desc">Les candidats retenus pour la cohorte sont contactés après l’étude des candidatures.</p>
+          </div>
+
+          <div class="selection-step-card">
+            <div class="step-badge">04</div>
+            <h3 class="step-card-title">Début de la formation</h3>
+            <p class="step-card-desc">Les 15 participants sélectionnés rejoignent le programme 100 % en ligne.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — FORMULAIRE DE CANDIDATURE -->
+    <section class="section section-light" id="candidature" aria-labelledby="candidature-title">
+      <div class="container form-wrapper-container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Formulaire Officiel</span>
+          <h2 class="section-title" id="candidature-title">Dépôt de candidature</h2>
+          <p class="section-subtitle">
+            Remplissez ce formulaire pour postuler à la prochaine cohorte IApprise.
+          </p>
+        </div>
+
+        <form class="application-form" id="application-form" action="/api/candidature" method="POST" novalidate data-reveal>
+          
+          <div class="form-banner">
+            <span class="banner-badge">Cohorte 2026</span>
+            <span>15 places • Formation financée • 100 % en ligne • Candidatures jusqu’au <strong>10 octobre 2026</strong></span>
+          </div>
+
+          <!-- Identité & Coordonnées -->
+          <div class="form-row grid-2-cols">
+            <div class="form-group">
+              <label for="applicant-fullname" class="form-label">Nom complet <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="applicant-fullname" name="fullname" class="form-input" required autocomplete="name" placeholder="Ex. Aminata Diallo">
+              <span class="field-error" id="error-fullname" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-email" class="form-label">Adresse e-mail <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="applicant-email" name="email" class="form-input" required autocomplete="email" placeholder="nom@exemple.com">
+              <span class="field-error" id="error-email" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-row grid-2-cols">
+            <div class="form-group">
+              <label for="applicant-phone" class="form-label">Numéro de téléphone / WhatsApp</label>
+              <input type="tel" id="applicant-phone" name="phone" class="form-input" autocomplete="tel" placeholder="+221 77 000 00 00">
+              <span class="field-error" id="error-phone" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-country" class="form-label">Pays de résidence <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="applicant-country" name="country" class="form-input" required placeholder="Ex. Sénégal, Côte d'Ivoire, Cameroun...">
+              <span class="field-error" id="error-country" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-row grid-2-cols">
+            <div class="form-group">
+              <label for="applicant-city" class="form-label">Ville</label>
+              <input type="text" id="applicant-city" name="city" class="form-input" placeholder="Ex. Dakar, Abidjan, Yaoundé...">
+              <span class="field-error" id="error-city" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-school" class="form-label">Université / École <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="applicant-school" name="school" class="form-input" required placeholder="Ex. Université Cheikh Anta Diop">
+              <span class="field-error" id="error-school" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-row grid-2-cols">
+            <div class="form-group">
+              <label for="applicant-domain" class="form-label">Domaine d’études</label>
+              <input type="text" id="applicant-domain" name="domain" class="form-input" placeholder="Ex. Informatique, Mathématiques, Économie...">
+              <span class="field-error" id="error-domain" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-level" class="form-label">Niveau d’études <span class="required" aria-hidden="true">*</span></label>
+              <select id="applicant-level" name="level" class="form-select" required>
+                <option value="">Sélectionnez votre niveau d'études</option>
+                <option value="Licence / Bachelor">Licence / Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="Doctorat">Doctorat</option>
+                <option value="Jeune diplômé">Jeune diplômé</option>
+                <option value="Autre">Autre</option>
+              </select>
+              <span class="field-error" id="error-level" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Compétences & Prérequis -->
+          <div class="form-row grid-2-cols">
+            <div class="form-group">
+              <label for="applicant-python" class="form-label">Niveau en Python</label>
+              <select id="applicant-python" name="python_level" class="form-select">
+                <option value="Jamais utilisé">Jamais utilisé</option>
+                <option value="Débutant">Débutant</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Avancé">Avancé</option>
+              </select>
+              <span class="field-error" id="error-python" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-datascience" class="form-label">Expérience en Data Science / Machine Learning</label>
+              <select id="applicant-datascience" name="datascience_experience" class="form-select">
+                <option value="Aucune">Aucune</option>
+                <option value="Quelques notions">Quelques notions</option>
+                <option value="Formation déjà suivie">Formation déjà suivie</option>
+                <option value="Projet personnel">Projet personnel</option>
+                <option value="Expérience avancée">Expérience avancée</option>
+              </select>
+              <span class="field-error" id="error-datascience" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Questions de motivation -->
+          <div class="form-group">
+            <label for="applicant-motivation" class="form-label">Pourquoi souhaites-tu intégrer IApprise ? <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="applicant-motivation" name="motivation" class="form-textarea" rows="4" required placeholder="Expliquez vos motivations techniques et vos objectifs d'apprentissage..."></textarea>
+            <span class="field-error" id="error-motivation" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="applicant-goals" class="form-label">Quel métier ou type de projet aimerais-tu viser dans les prochaines années ?</label>
+            <textarea id="applicant-goals" name="future_goals" class="form-textarea" rows="3" placeholder="Ex. Data Scientist, Ingénieur ML, projets dans la santé ou la finance..."></textarea>
+            <span class="field-error" id="error-goals" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="applicant-problem" class="form-label">Quel problème aimerais-tu résoudre grâce à la Data Science ou à l’IA ?</label>
+            <textarea id="applicant-problem" name="problem_to_solve" class="form-textarea" rows="3" placeholder="Décrivez un cas concret ou un défi qui vous tient à cœur..."></textarea>
+            <span class="field-error" id="error-problem" aria-live="polite"></span>
+          </div>
+
+          <!-- Disponibilité & Logistique -->
+          <div class="form-row grid-3-cols">
+            <div class="form-group">
+              <label for="applicant-availability" class="form-label">Disponibilité hebdomadaire</label>
+              <select id="applicant-availability" name="weekly_availability" class="form-select">
+                <option value="Moins de 3 heures">Moins de 3 heures</option>
+                <option value="3 à 5 heures">3 à 5 heures</option>
+                <option value="5 à 10 heures" selected>5 à 10 heures</option>
+                <option value="Plus de 10 heures">Plus de 10 heures</option>
+              </select>
+              <span class="field-error" id="error-availability" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-pc" class="form-label">Accès à un ordinateur personnel ?</label>
+              <select id="applicant-pc" name="pc_access" class="form-select">
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+                <option value="Occasionnellement">Occasionnellement</option>
+              </select>
+              <span class="field-error" id="error-pc" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-internet" class="form-label">Connexion Internet régulière ?</label>
+              <select id="applicant-internet" name="internet_access" class="form-select">
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+                <option value="Cela dépend des périodes">Cela dépend des périodes</option>
+              </select>
+              <span class="field-error" id="error-internet" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-group form-consent">
+            <label class="checkbox-label" for="applicant-consent">
+              <input type="checkbox" id="applicant-consent" name="consent" required class="form-checkbox">
+              <span>Je confirme être disponible pour suivre sérieusement le programme si ma candidature est retenue. <span class="required" aria-hidden="true">*</span></span>
+            </label>
+            <span class="field-error" id="error-consent" aria-live="polite"></span>
+          </div>
+
+          <div class="form-actions">
+            <div class="form-reminder-text">
+              15 places • Formation financée • 100 % en ligne • Candidatures jusqu’au <strong>10 octobre 2026</strong>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="form-submit-btn">
+              Envoyer ma candidature
+            </button>
+          </div>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECTION 10 — FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="section-kicker">Foire Aux Questions</span>
+          <h2 class="section-title" id="faq-title">Questions fréquentes</h2>
+          <p class="section-subtitle">
+            Toutes les réponses pour préparer votre candidature au programme IApprise.
+          </p>
+        </div>
+
+        <div class="faq-accordion" data-reveal>
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">La formation est-elle vraiment gratuite ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui. La formation est financée par les partenaires de IApprise et aucun frais de formation n’est demandé aux candidats sélectionnés.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">La formation se déroule-t-elle en présentiel ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Non. Le programme est entièrement en ligne et peut être suivi depuis le pays de résidence du participant.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">Combien de places sont disponibles ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>La prochaine cohorte est limitée à 15 participants.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">Comment les candidats sont-ils sélectionnés ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Les candidatures sont étudiées notamment selon le parcours, la motivation, la disponibilité et l’adéquation du projet du candidat avec le programme.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">Jusqu’à quand peut-on candidater ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Les inscriptions sont ouvertes jusqu’au <strong>10 octobre 2026</strong>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">Faut-il déjà être expert en programmation ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Non. Le programme est accessible à des profils motivés qui disposent des prérequis nécessaires pour progresser. Une première expérience en programmation constitue néanmoins un avantage.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">IApprise garantit-il un emploi ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Non. IApprise développe les compétences techniques et professionnelles des participants afin de <strong>renforcer leur préparation aux opportunités professionnelles</strong>, mais ne garantit pas un emploi à l’issue de la formation.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span class="faq-question">Pourquoi seulement 15 participants ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Le nombre de places est volontairement limité afin de favoriser la qualité du suivi, les échanges et l’accompagnement pédagogique.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — CTA FINAL -->
+    <section class="section section-dark section-cta-final" id="cta-final" aria-labelledby="cta-final-title">
+      <div class="container text-center">
+        <div class="cta-final-content" data-reveal>
+          <span class="section-kicker">Rejoindre la cohorte 2026</span>
+          <h2 class="section-title" id="cta-final-title">Ton potentiel peut aller bien au-delà de tes frontières.</h2>
+          <p class="section-subtitle">
+            Rejoins une nouvelle génération de talents africains qui se préparent à construire, analyser et déployer les technologies basées sur la donnée et l’intelligence artificielle.
+          </p>
+
+          <div class="cta-final-badges">
+            <span class="final-badge-item">15 places seulement</span>
+            <span class="final-badge-item">Candidatures jusqu’au 10 octobre 2026</span>
+            <span class="final-badge-item">Formation 100 % en ligne</span>
+            <span class="final-badge-item">Formation financée pour les candidats sélectionnés</span>
+          </div>
+
+          <div class="cta-final-action">
+            <a href="#candidature" class="btn btn-primary btn-lg">
+              Déposer ma candidature
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <div class="footer-main grid-4-cols">
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-logo-link" aria-label="IApprise — Accueil">
+            <img src="assets/logo.svg" alt="IApprise Logo" class="footer-logo" width="180" height="38">
+          </a>
+          <p class="footer-tagline">
+            IApprise — Developing Africa’s Data &amp; AI Talent
+          </p>
+          <div class="footer-deadline-reminder">
+            Candidatures 2026 : Clôture le <strong>10 octobre 2026</strong>.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#mission">Notre mission</a></li>
+            <li><a href="#entreprises">Pour les entreprises</a></li>
+            <li><a href="#candidature">Candidature</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact &amp; Réseaux</h4>
+          <ul class="footer-links">
+            <li>
+              <span class="footer-link-label">E-mail :</span>
+              <a href="mailto:kwemard@gmail.com" class="footer-contact-link">kwemard@gmail.com</a>
+            </li>
+            <li>
+              <span class="footer-link-label">LinkedIn :</span>
+              <a href="https://www.linkedin.com/company/LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="footer-contact-link">LinkedIn officiel (LINKEDIN_URL)</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Cadre Institutionnel</h4>
+          <p class="footer-legal-notice">
+            Le programme a pour objet de <em>renforcer la préparation aux opportunités professionnelles</em>.
+          </p>
+          <ul class="footer-links">
+            <li><a href="LEGAL_NOTICE_URL">Mentions Légales</a></li>
+            <li><a href="PRIVACY_POLICY_URL">Politique de Confidentialité</a></li>
+            <li><span class="footer-reg">N° Enregistrement : REGISTRATION_NUMBER</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 IApprise. Tous droits réservés.
+        </p>
+        <p class="footer-subtext">
+          Conformité WCAG AA &bull; Date limite officielle : 10 octobre 2026
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
