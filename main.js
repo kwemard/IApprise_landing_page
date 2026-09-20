@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const NOTIFICATION_EMAIL = 'kwemard@gmail.com';
   const EMAIL_DISPATCH_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`;
   
-  // URL de l'application Web Google Apps Script connectée au Google Sheet
-  const GOOGLE_SHEETS_ENDPOINT = 'GOOGLE_SHEETS_WEBAPP_URL';
+  // URL officielle de l'application Web Google Apps Script connectée au Google Sheet
+  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdbOzER8jx2ybxwki-nseO72mT_VsHBIJXZkzMXPaZNIpgFkmDRS792B0sbHstsmWuXw/exec';
 
   /* ==========================================================================
      1. Navigation & Mobile Menu Toggle
@@ -213,8 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const promises = [];
 
-      // 1. Envoi vers Google Sheets (si configuré)
-      if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT !== 'GOOGLE_SHEETS_WEBAPP_URL' && GOOGLE_SHEETS_ENDPOINT.startsWith('http')) {
+      // 1. Envoi direct vers votre feuille Google Sheets
+      if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT.startsWith('http')) {
         promises.push(
           fetch(GOOGLE_SHEETS_ENDPOINT, {
             method: 'POST',
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(() => {})
       );
 
-      // 3. Sauvegarde locale (si serveur Python local actif)
+      // 3. Sauvegarde locale (backup)
       promises.push(
         fetch('/api/candidature', {
           method: 'POST',
